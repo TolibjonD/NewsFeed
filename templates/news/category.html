@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} {% for new in news %} {% if forloop.first %} {{ new.category }} {% endif %} {% endfor %} Yangiliklari {% endblock title %}  
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/font.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/li-scroller.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/slick.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/jquery.fancybox.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/theme.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/messages.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/newsList.css' %}">
+{% endblock styles %}
+{% block content %}
+
+
+<section class="newsList">
+    <div class="container">
+        
+       {% for news in news %}
+       <div class="carder">
+        <div class="photo">
+          <a href="{{ news.get_absolute_url }}">
+            <img src="{{ news.image.url }}" alt="" style="width: 300px;">
+          </a>
+            <div class="infor">
+                <p> {{ news.category }} </p>
+            </div>
+        </div>
+        <div class="content-news-list">
+            <p class="titleer"> <a href="{{ news.get_absolute_url }}">{{ news.title }}</a> </p>
+            <p class="body">
+                {{ news.body|safe|truncatewords:30 }}
+            </p>
+            <p class="date"> {{ news.published_time|date:"h:i , d.m.Y" }} </p>
+        </div>
+    </div>
+       {% endfor %}
+    </div>
+</section>
+
+
+{% endblock content %}

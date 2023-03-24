@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+.newsList .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.newsList .container .carder{
+    width: 90%;
+    position: relative;
+    display: flex;
+    gap: 10px;
+    padding: 5px;
+    border-bottom: 1px solid #9999;
+}
+
+
+
+.newsList .container .carder .photo{
+    position: relative;
+    width: 300px;
+}
+
+.newsList .container .carder .photo img{
+    width: 300px;
+    transition: .3s ease-in-out;
+}
+
+.newsList .container .carder .photo .infor{
+    position: absolute;
+    background-color: rgb(32, 255, 181);
+    color: #fff;
+    padding: 1px;
+    left: 2px;
+    top: 2px;
+    font-size: 13px;
+}
+.newsList .container .carder .content-news-list{
+    padding-bottom: 15px;
+}
+.newsList .container .carder .content-news-list .titleer a{
+    font-size: 20px;
+    transition: .3s linear;
+}
+.newsList .container .carder .content-news-list .titleer:hover a{
+   color: rgb(58, 255, 189);
+   background-color: #555;
+}
+.newsList .container .carder .content-news-list .date{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.newsList .container #loadmore{
+    border: none;
+    outline: none;
+    background-color:aquamarine;
+    color: #fff;
+    padding: 7px 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px #c6c6c699;
+    transition: .3s linear;
+}
+
+
+.newsList .container #loadmore:hover{
+    background-color: rgb(44, 255, 185);
+}
+
+@media (max-width: 768px){
+    .newsList .container .carder .photo img{
+        width: 100%;
+    }
+    .newsList .container .carder .photo{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .newsList .container .carder{
+        flex-direction: column;
+    }
+    .newsList .container .carder .photo .infor{
+        font-size: 15px;
+        top: 2px;
+        left: 2.5px;
+    }
+
+}
